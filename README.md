@@ -18,43 +18,43 @@ Not a lot of examples will be here. Check out [examples](./examples) directory f
 #### Variables
 Otter's variables are type-checked. It is neccessary to specify your value type when creating a variable.
 
-```
+```cpp
 int my_age = 18
 ```
 
-```
+```cpp
 float money_i_have = 5.2
 ```
 
 Unlike most languages, String is a primitive type for Otter.
 
-```
+```cpp
 string message = "Hello, i am a new language"
 ```
 
 ##### Constants
 To define a const variable use `const` keyword. 
-```
+```cpp
 const string PROJECT_NAME = "Some Project"
 ```
 
 ##### Arrays
 Otter's arrays are dynamic, they can grow as large as it needs to be.
-```
+```java
 List<string> fruits = ["Apple", "Orange", "Banana"]
 ```
 Otter arrays start at index 0 as it is conventional index.
 
 ##### Dicts
 Otter provides a Python like dict feature.
-```
+```py
 Dict<string, string> roles = {"Me": "Admin", "Cat": "Animal"}
 ```
 
 ##### Variable hoisting
 Otter offers a basic variable hoisting feature.
 
-```
+```cpp
 string data // null at this point
 
 data = readIn()
