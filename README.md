@@ -62,7 +62,7 @@ data = readIn()
 
 ##### Exporting variables
 Otter allows multiple source files to be used. To share codes across files you can use `export` keyword
-```
+```cpp
 export projectName
 export someFunction // Allows exporting functions
 export someStruct // Allows exporting structs
@@ -89,14 +89,14 @@ let config = {
 ```
 
 Inside the code:
-```
+```cpp
 asset image = $"./Some/Path/To/File.png"
 ```
 
 ##### Vectors
 Vectors are also a primitive type of the Otter.
 
-```
+```cpp
 vector velocity = <3, 3, 3>
 velocity.x = 5
 ```
@@ -104,7 +104,7 @@ velocity.x = 5
 #### Structs
 Structs are an easy way to bundle all of your variables. Similar to classes.
 
-```
+```cpp
 struct Car {
     int max_speed
     string name
@@ -121,7 +121,7 @@ Car car = {max_speed = 200, name = "Bugatti"} // Create an instance with specifi
 
 Nesting structs are possible
 
-```
+```cpp
 struct World {
     string folder
     string name
@@ -143,14 +143,14 @@ Player player = {name="Player123", healt=5, location={position=<5, 5, 5>, world=
 
 ##### Self Nesting Structs
 Self-nesting structs are also possible however they need to be null initialized otherwise VM will try to create instances forever. (Not actually possible since this will fail before even running the code)
-```
+```cpp
 struct Node {
     Node child = null
 }
 ```
 
 ##### Default Field Values
-```
+```cpp
 struct Cat {
     string name = "Alex"
     int age
@@ -162,7 +162,7 @@ print(cat) // Cat{name="Alex", age=0}
 
 ##### Singleton Instances
 One instance structs are defined by specifying name after defining the struct.
-```
+```cpp
 struct {
     int brightness
 } Config
@@ -171,7 +171,7 @@ struct {
 #### Functions
 Functions are defined with this syntax
 
-```
+```rust
 fn isPositive(int value) -> bool {
     return value > 0
 }
@@ -179,7 +179,7 @@ fn isPositive(int value) -> bool {
 
 ##### Functionrefs
 Functions can be referanced using functionref.
-```
+```rust
 fn isPositive(int value) -> bool {
     return value > 0
 }
@@ -194,7 +194,7 @@ call(isPositive)
 ```
 
 ##### Optional parameters
-```
+```rust
 fn OR(bool a = true, bool b = true) -> bool {
     return a || b
 }
@@ -203,7 +203,7 @@ fn OR(bool a = true, bool b = true) -> bool {
 ##### Closures
 It is possible to use closures in Otter
 
-```
+```rust
 void functionref() fn = void fn(){
     print("Hello World!")
 }
@@ -216,7 +216,7 @@ bool functionref(int) isPositive = fn(int val)->bool{
 ##### vargs
 With vargs you can pass a function an unlimited amount of parameters. The parameters will be inside a pseudo array called vargv. The length of the vargs the function receives will be stored inside a variable called vargc.
 
-```
+```rust
 fn combine(string ...) -> string {
     string base
     for(int i=0; i<vargc; i++){
@@ -228,7 +228,7 @@ fn combine(string ...) -> string {
 
 #### Importing
 Importing from other files is really easy.
-```
+```js
 module math = require("math")
 module animationlib = require("./animation.ot")
 ```
