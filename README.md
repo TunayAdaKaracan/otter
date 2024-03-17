@@ -61,13 +61,9 @@ data = readIn()
 ```
 
 ##### Exporting variables
-Otter allows multiple source files to be used. To share codes across files you can use `export` keyword
-```cpp
-export projectName
-export someFunction // Allows exporting functions
-export someStruct // Allows exporting structs
-
-string projectName = "Some Project"
+Otter allows multiple source files to be used. To share codes across files you can use `pub` keyword
+```rust
+pub string projectName = "Some Project"
 ```
 
 ##### Special Strings
@@ -184,7 +180,7 @@ fn isPositive(int value) -> bool {
     return value > 0
 }
 
-bool functionref(int) = isPositive
+bool functionref(int) someFunction = isPositive
 
 fn call(bool functionref(int) fn, int number){ // -> void
     fn(number)
@@ -204,7 +200,7 @@ fn OR(bool a = true, bool b = true) -> bool {
 It is possible to use closures in Otter
 
 ```rust
-void functionref() fn = void fn(){
+void functionref() printHello = fn(){
     print("Hello World!")
 }
 
